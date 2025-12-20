@@ -76,7 +76,7 @@ version = "1.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "40c48f72fd53cd289104fc64099abca73db4166ad86ea0b4341abe65af83dadc"
 dependencies = [
- "windows-sys 0.61.2",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -87,7 +87,7 @@ checksum = "291e6a250ff86cd4a820112fb8898808a366d8f9f58ce16d1f538353ad55747d"
 dependencies = [
  "anstyle",
  "once_cell_polyfill",
- "windows-sys 0.61.2",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -529,9 +529,9 @@ checksum = "877a4ace8713b0bcf2a4e7eec82529c029f1d0619886d18145fea96c3ffe5c0f"
 
 [[package]]
 name = "fancy-regex"
-version = "0.16.2"
+version = "0.17.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "998b056554fbe42e03ae0e152895cd1a7e1002aec800fdc6635d20270260c46f"
+checksum = "72cf461f865c862bb7dc573f643dd6a2b6842f7c30b07882b56bd148cc2761b8"
 dependencies = [
  "bit-set",
  "regex-automata",
@@ -1016,8 +1016,8 @@ checksum = "5e5032e24019045c762d3c0f28f5b6b8bbf38563a65908389bf7978758920897"
 
 [[package]]
 name = "mago-database"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.0.1"
+source = "git+https://github.com/carthage-software/mago#a0fe630c90c8c284c8826d3675d9bcbbc7210989"
 dependencies = [
  "ahash",
  "glob",
@@ -1033,8 +1033,8 @@ dependencies = [
 
 [[package]]
 name = "mago-formatter"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.0.1"
+source = "git+https://github.com/carthage-software/mago#a0fe630c90c8c284c8826d3675d9bcbbc7210989"
 dependencies = [
  "ahash",
  "bitflags 2.10.0",
@@ -1050,8 +1050,8 @@ dependencies = [
 
 [[package]]
 name = "mago-php-version"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.0.1"
+source = "git+https://github.com/carthage-software/mago#a0fe630c90c8c284c8826d3675d9bcbbc7210989"
 dependencies = [
  "schemars",
  "serde",
@@ -1059,8 +1059,8 @@ dependencies = [
 
 [[package]]
 name = "mago-reporting"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.0.1"
+source = "git+https://github.com/carthage-software/mago#a0fe630c90c8c284c8826d3675d9bcbbc7210989"
 dependencies = [
  "ahash",
  "ariadne",
@@ -1080,8 +1080,8 @@ dependencies = [
 
 [[package]]
 name = "mago-span"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.0.1"
+source = "git+https://github.com/carthage-software/mago#a0fe630c90c8c284c8826d3675d9bcbbc7210989"
 dependencies = [
  "mago-database",
  "serde",
@@ -1089,8 +1089,8 @@ dependencies = [
 
 [[package]]
 name = "mago-syntax"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.0.1"
+source = "git+https://github.com/carthage-software/mago#a0fe630c90c8c284c8826d3675d9bcbbc7210989"
 dependencies = [
  "bumpalo",
  "either",
@@ -1107,8 +1107,8 @@ dependencies = [
 
 [[package]]
 name = "mago-syntax-core"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.0.1"
+source = "git+https://github.com/carthage-software/mago#a0fe630c90c8c284c8826d3675d9bcbbc7210989"
 dependencies = [
  "bumpalo",
  "mago-database",
@@ -1118,8 +1118,8 @@ dependencies = [
 
 [[package]]
 name = "mago-text-edit"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.0.1"
+source = "git+https://github.com/carthage-software/mago#a0fe630c90c8c284c8826d3675d9bcbbc7210989"
 dependencies = [
  "serde",
  "strum 0.27.2",
@@ -1245,6 +1245,48 @@ name = "percent-encoding"
 version = "2.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9b4f627cb1b25917193a259e49bdad08f671f8d9708acfd5fe0a8c1455d87220"
+
+[[package]]
+name = "phf"
+version = "0.11.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1fd6780a80ae0c52cc120a26a1a42c1ae51b247a253e4e06113d23d2c2edd078"
+dependencies = [
+ "phf_macros",
+ "phf_shared",
+]
+
+[[package]]
+name = "phf_generator"
+version = "0.11.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3c80231409c20246a13fddb31776fb942c38553c51e871f8cbd687a4cfb5843d"
+dependencies = [
+ "phf_shared",
+ "rand",
+]
+
+[[package]]
+name = "phf_macros"
+version = "0.11.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f84ac04429c13a7ff43785d75ad27569f2951ce0ffd30a3321230db2fc727216"
+dependencies = [
+ "phf_generator",
+ "phf_shared",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.111",
+]
+
+[[package]]
+name = "phf_shared"
+version = "0.11.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "67eabc2ef2a60eb7faa00097bd1ffdb5bd28e62bf39990626a582201b7a754e5"
+dependencies = [
+ "siphasher",
+]
 
 [[package]]
 name = "pin-project-lite"
@@ -1428,8 +1470,8 @@ checksum = "7a2d987857b319362043e95f5353c0535c1f58eec5336fdfcf626430af7def58"
 
 [[package]]
 name = "rumdl"
-version = "0.0.197"
-source = "git+https://github.com/rvben/rumdl#de14814947984d2a9e19feedcb2a422d25666f5b"
+version = "0.0.198"
+source = "git+https://github.com/rvben/rumdl#b127da5c73ea15a12de4390e81aa7a4da7323da6"
 dependencies = [
  "anyhow",
  "clap 4.5.53",
@@ -1443,6 +1485,7 @@ dependencies = [
  "log",
  "memmap2",
  "mimalloc",
+ "phf",
  "pulldown-cmark",
  "regex",
  "schemars",
@@ -1453,7 +1496,7 @@ dependencies = [
  "tikv-jemallocator",
  "titlecase",
  "toml 0.9.10+spec-1.1.0",
- "toml_edit 0.23.10+spec-1.0.0",
+ "toml_edit 0.24.0+spec-1.1.0",
  "unicode-normalization",
  "unicode-width",
  "url",
@@ -1665,6 +1708,12 @@ dependencies = [
  "bstr",
  "serde",
 ]
+
+[[package]]
+name = "siphasher"
+version = "1.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "56199f7ddabf13fe5074ce809e7d3f42b42ae711800501b5b16ea82ad029c39d"
 
 [[package]]
 name = "slab"
@@ -1998,9 +2047,9 @@ dependencies = [
 
 [[package]]
 name = "toml_edit"
-version = "0.23.10+spec-1.0.0"
+version = "0.24.0+spec-1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "84c8b9f757e028cee9fa244aea147aab2a9ec09d5325a9b01e0a49730c2b5269"
+checksum = "8c740b185920170a6d9191122cafef7010bd6270a3824594bff6784c04d7f09e"
 dependencies = [
  "indexmap 2.12.1",
  "toml_datetime 0.7.5+spec-1.1.0",
@@ -2198,7 +2247,7 @@ version = "0.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22"
 dependencies = [
- "windows-sys 0.61.2",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
