@@ -1,0 +1,16 @@
+[package]
+name = "dprint-plugin-stylua"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "dprint plugin for StyLua formatter"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+anyhow.workspace = true
+dprint-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+stylua = { version = "2.3.1", default-features = false, features = ["lua54", "serialize", "fromstr"] }

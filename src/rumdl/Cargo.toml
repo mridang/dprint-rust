@@ -1,0 +1,16 @@
+[package]
+name = "dprint-plugin-rumdl"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "dprint plugin for rumdl markdown formatter"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+anyhow.workspace = true
+dprint-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+rumdl = { git = "https://github.com/rvben/rumdl", default-features = false, features = [] }

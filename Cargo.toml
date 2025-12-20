@@ -1,0 +1,19 @@
+[workspace]
+members = [
+  "src/mago",
+  "src/stylua",
+  "src/rumdl",
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+version = "0.1.0"
+authors = ["Mridang Agarwalla"]
+license = "Apache-2.0"
+
+[workspace.dependencies]
+anyhow = "1.0.100"
+dprint-core = { version = "0.67.4", features = ["wasm"] }
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = { version = "1.0.132", features = ["preserve_order"] }

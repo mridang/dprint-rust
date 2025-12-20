@@ -1,0 +1,9 @@
+/target
+build
+.devbox
+devbox.lock
+.vscode
+.DS_Store
+*.wasm
+/.cargo
+/.rustup

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.10.7/.schema/devbox.schema.json",
+  "packages": {
+    "dprint": "latest",
+    "rustup": "latest",
+    "wabt": "latest",
+    "wasmtime": "latest",
+    "libiconv": "latest"
+  },
+  "shell": {
+    "init_hook": [
+      "export CARGO_HOME=$PWD/.cargo",
+      "export RUSTUP_HOME=$PWD/.rustup",
+      "rustup default stable",
+      "rustup target add wasm32-unknown-unknown"
+    ],
+    "scripts": {
+      "test": "cargo test --all --all-features",
+      "build": "make build",
+      "lint": "cargo clippy --all-targets --all-features -- -D warnings",
+      "format": "cargo fmt --all"
+    }
+  }
+}

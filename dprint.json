@@ -1,0 +1,15 @@
+{
+  "includes": [
+    "**/*.php",
+    "**/*.phtml",
+    "**/*.lua",
+    "**/*.md",
+    "**/*.mdx",
+    "**/*.qmd"
+  ],
+  "plugins": [
+    "./build/mago.wasm",
+    "./build/stylua.wasm",
+    "./build/rumdl.wasm"
+  ]
+}
