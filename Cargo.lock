@@ -76,7 +76,7 @@ version = "1.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "40c48f72fd53cd289104fc64099abca73db4166ad86ea0b4341abe65af83dadc"
 dependencies = [
- "windows-sys 0.61.2",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -87,7 +87,7 @@ checksum = "291e6a250ff86cd4a820112fb8898808a366d8f9f58ce16d1f538353ad55747d"
 dependencies = [
  "anstyle",
  "once_cell_polyfill",
- "windows-sys 0.61.2",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -529,14 +529,20 @@ checksum = "877a4ace8713b0bcf2a4e7eec82529c029f1d0619886d18145fea96c3ffe5c0f"
 
 [[package]]
 name = "fancy-regex"
-version = "0.16.2"
+version = "0.17.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "998b056554fbe42e03ae0e152895cd1a7e1002aec800fdc6635d20270260c46f"
+checksum = "72cf461f865c862bb7dc573f643dd6a2b6842f7c30b07882b56bd148cc2761b8"
 dependencies = [
  "bit-set",
  "regex-automata",
  "regex-syntax",
 ]
+
+[[package]]
+name = "fastrand"
+version = "2.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "37909eebbb50d72f9059c3b6d82c0463f2ff062c9e95845c43a6c9c0355411be"
 
 [[package]]
 name = "find-msvc-tools"
@@ -1003,6 +1009,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "libyml"
+version = "0.0.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3302702afa434ffa30847a83305f0a69d6abd74293b6554c18ec85c7ef30c980"
+dependencies = [
+ "anyhow",
+ "version_check",
+]
+
+[[package]]
 name = "litemap"
 version = "0.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1016,8 +1032,8 @@ checksum = "5e5032e24019045c762d3c0f28f5b6b8bbf38563a65908389bf7978758920897"
 
 [[package]]
 name = "mago-database"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.0.3"
+source = "git+https://github.com/carthage-software/mago#0f8174963a7d8af7fcee510fd5885bdfe02376e2"
 dependencies = [
  "ahash",
  "glob",
@@ -1033,8 +1049,8 @@ dependencies = [
 
 [[package]]
 name = "mago-formatter"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.0.3"
+source = "git+https://github.com/carthage-software/mago#0f8174963a7d8af7fcee510fd5885bdfe02376e2"
 dependencies = [
  "ahash",
  "bitflags 2.10.0",
@@ -1045,13 +1061,15 @@ dependencies = [
  "mago-syntax",
  "schemars",
  "serde",
+ "strum 0.27.2",
+ "strum_macros 0.27.2",
  "unicode-width",
 ]
 
 [[package]]
 name = "mago-php-version"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.0.3"
+source = "git+https://github.com/carthage-software/mago#0f8174963a7d8af7fcee510fd5885bdfe02376e2"
 dependencies = [
  "schemars",
  "serde",
@@ -1059,8 +1077,8 @@ dependencies = [
 
 [[package]]
 name = "mago-reporting"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.0.3"
+source = "git+https://github.com/carthage-software/mago#0f8174963a7d8af7fcee510fd5885bdfe02376e2"
 dependencies = [
  "ahash",
  "ariadne",
@@ -1080,8 +1098,8 @@ dependencies = [
 
 [[package]]
 name = "mago-span"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.0.3"
+source = "git+https://github.com/carthage-software/mago#0f8174963a7d8af7fcee510fd5885bdfe02376e2"
 dependencies = [
  "mago-database",
  "serde",
@@ -1089,8 +1107,8 @@ dependencies = [
 
 [[package]]
 name = "mago-syntax"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.0.3"
+source = "git+https://github.com/carthage-software/mago#0f8174963a7d8af7fcee510fd5885bdfe02376e2"
 dependencies = [
  "bumpalo",
  "either",
@@ -1107,8 +1125,8 @@ dependencies = [
 
 [[package]]
 name = "mago-syntax-core"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.0.3"
+source = "git+https://github.com/carthage-software/mago#0f8174963a7d8af7fcee510fd5885bdfe02376e2"
 dependencies = [
  "bumpalo",
  "mago-database",
@@ -1118,8 +1136,8 @@ dependencies = [
 
 [[package]]
 name = "mago-text-edit"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.0.3"
+source = "git+https://github.com/carthage-software/mago#0f8174963a7d8af7fcee510fd5885bdfe02376e2"
 dependencies = [
  "serde",
  "strum 0.27.2",
@@ -1245,6 +1263,49 @@ name = "percent-encoding"
 version = "2.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9b4f627cb1b25917193a259e49bdad08f671f8d9708acfd5fe0a8c1455d87220"
+
+[[package]]
+name = "phf"
+version = "0.13.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c1562dc717473dbaa4c1f85a36410e03c047b2e7df7f45ee938fbef64ae7fadf"
+dependencies = [
+ "phf_macros",
+ "phf_shared",
+ "serde",
+]
+
+[[package]]
+name = "phf_generator"
+version = "0.13.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "135ace3a761e564ec88c03a77317a7c6b80bb7f7135ef2544dbe054243b89737"
+dependencies = [
+ "fastrand",
+ "phf_shared",
+]
+
+[[package]]
+name = "phf_macros"
+version = "0.13.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "812f032b54b1e759ccd5f8b6677695d5268c588701effba24601f6932f8269ef"
+dependencies = [
+ "phf_generator",
+ "phf_shared",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.111",
+]
+
+[[package]]
+name = "phf_shared"
+version = "0.13.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e57fef6bc5981e38c2ce2d63bfa546861309f875b8a75f092d1d54ae2d64f266"
+dependencies = [
+ "siphasher",
+]
 
 [[package]]
 name = "pin-project-lite"
@@ -1428,8 +1489,8 @@ checksum = "7a2d987857b319362043e95f5353c0535c1f58eec5336fdfcf626430af7def58"
 
 [[package]]
 name = "rumdl"
-version = "0.0.197"
-source = "git+https://github.com/rvben/rumdl#de14814947984d2a9e19feedcb2a422d25666f5b"
+version = "0.0.213"
+source = "git+https://github.com/rvben/rumdl#5f10e1bd337842bab30d09019be4ac85a6fcbc99"
 dependencies = [
  "anyhow",
  "clap 4.5.53",
@@ -1443,17 +1504,18 @@ dependencies = [
  "log",
  "memmap2",
  "mimalloc",
+ "phf",
  "pulldown-cmark",
  "regex",
  "schemars",
  "serde",
  "serde_json",
- "serde_yaml",
+ "serde_yml",
  "thiserror 2.0.17",
  "tikv-jemallocator",
  "titlecase",
  "toml 0.9.10+spec-1.1.0",
- "toml_edit 0.23.10+spec-1.0.0",
+ "toml_edit 0.24.0+spec-1.1.0",
  "unicode-normalization",
  "unicode-width",
  "url",
@@ -1601,16 +1663,16 @@ dependencies = [
 
 [[package]]
 name = "serde_json"
-version = "1.0.145"
+version = "1.0.149"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "402a6f66d8c709116cf22f558eab210f5a50187f702eb4d7e5ef38d9a7f1c79c"
+checksum = "83fc039473c5595ace860d8c4fafa220ff474b3fc6bfdb4293327f1a37e94d86"
 dependencies = [
  "indexmap 2.12.1",
  "itoa",
  "memchr",
- "ryu",
  "serde",
  "serde_core",
+ "zmij",
 ]
 
 [[package]]
@@ -1632,16 +1694,18 @@ dependencies = [
 ]
 
 [[package]]
-name = "serde_yaml"
-version = "0.9.34+deprecated"
+name = "serde_yml"
+version = "0.0.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6a8b1a1a2ebf674015cc02edccce75287f1a0130d394307b36743c2f5d504b47"
+checksum = "59e2dd588bf1597a252c3b920e0143eb99b0f76e4e082f4c92ce34fbc9e71ddd"
 dependencies = [
  "indexmap 2.12.1",
  "itoa",
+ "libyml",
+ "memchr",
  "ryu",
  "serde",
- "unsafe-libyaml",
+ "version_check",
 ]
 
 [[package]]
@@ -1665,6 +1729,12 @@ dependencies = [
  "bstr",
  "serde",
 ]
+
+[[package]]
+name = "siphasher"
+version = "1.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "56199f7ddabf13fe5074ce809e7d3f42b42ae711800501b5b16ea82ad029c39d"
 
 [[package]]
 name = "slab"
@@ -1998,9 +2068,9 @@ dependencies = [
 
 [[package]]
 name = "toml_edit"
-version = "0.23.10+spec-1.0.0"
+version = "0.24.0+spec-1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "84c8b9f757e028cee9fa244aea147aab2a9ec09d5325a9b01e0a49730c2b5269"
+checksum = "8c740b185920170a6d9191122cafef7010bd6270a3824594bff6784c04d7f09e"
 dependencies = [
  "indexmap 2.12.1",
  "toml_datetime 0.7.5+spec-1.1.0",
@@ -2115,12 +2185,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ebc1c04c71510c7f702b52b7c350734c9ff1295c464a03335b00bb84fc54f853"
 
 [[package]]
-name = "unsafe-libyaml"
-version = "0.2.11"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "673aac59facbab8a9007c7f6108d11f63b603f7cabff99fabf650fea5c32b861"
-
-[[package]]
 name = "uriparse"
 version = "0.6.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2198,7 +2262,7 @@ version = "0.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22"
 dependencies = [
- "windows-sys 0.61.2",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -2486,3 +2550,9 @@ dependencies = [
  "quote",
  "syn 2.0.111",
 ]
+
+[[package]]
+name = "zmij"
+version = "1.0.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2fc5a66a20078bf1251bde995aa2fdcc4b800c70b5d92dd2c62abc5c60f679f8"
