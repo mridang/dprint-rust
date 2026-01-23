@@ -3,6 +3,7 @@ members = [
   "src/mago",
   "src/stylua",
   "src/rumdl",
+  "src/alejandra",
 ]
 resolver = "2"
 

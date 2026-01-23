@@ -5,11 +5,13 @@
     "**/*.lua",
     "**/*.md",
     "**/*.mdx",
-    "**/*.qmd"
+    "**/*.qmd",
+    "**/*.nix"
   ],
   "plugins": [
     "./build/mago.wasm",
     "./build/stylua.wasm",
-    "./build/rumdl.wasm"
+    "./build/rumdl.wasm",
+    "./build/alejandra.wasm"
   ]
 }
