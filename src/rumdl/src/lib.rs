@@ -107,8 +107,9 @@ impl SyncPluginHandler<Configuration> for RumdlPluginHandler {
         let all_rules = all_rules(&config);
         let rules = filter_rules(&all_rules, &config.global);
 
-        let warnings = rumdl_lib::lint(&content, &rules, false, config.global.flavor)
-            .map_err(|e| anyhow!("{e}"))?;
+        let warnings =
+            rumdl_lib::lint(&content, &rules, false, config.global.flavor, Some(&config))
+                .map_err(|e| anyhow!("{e}"))?;
 
         let coordinator = FixCoordinator::new();
         let mut fixed_content = content.clone();
@@ -141,7 +142,7 @@ mod tests {
 
         let all_rules = all_rules(&config);
         let rules = filter_rules(&all_rules, &config.global);
-        let warnings = rumdl_lib::lint(content, &rules, false, config.global.flavor)
+        let warnings = rumdl_lib::lint(content, &rules, false, config.global.flavor, Some(&config))
             .expect("lint should succeed");
 
         let coordinator = FixCoordinator::new();

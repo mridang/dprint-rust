@@ -20,11 +20,12 @@ else
   curl -sL "$RELEASE_URL/mago.wasm" -o mago.wasm
   curl -sL "$RELEASE_URL/stylua.wasm" -o stylua.wasm
   curl -sL "$RELEASE_URL/rumdl.wasm" -o rumdl.wasm
+  curl -sL "$RELEASE_URL/alejandra.wasm" -o alejandra.wasm
 fi
 
 write_config() {
-  local includes=( "**/*.php" "**/*.phtml" "**/*.lua" "**/*.md" )
-  local plugins=( "./mago.wasm" "./stylua.wasm" "./rumdl.wasm" )
+  local includes=( "**/*.php" "**/*.phtml" "**/*.lua" "**/*.md" "**/*.nix" )
+  local plugins=( "./mago.wasm" "./stylua.wasm" "./rumdl.wasm" "./alejandra.wasm" )
 
   {
     echo '{'
@@ -74,9 +75,17 @@ cat > doc.md << 'EOF'
 This  is  markdown with  bad spacing.
 EOF
 
+cat > main.nix << 'EOF'
+{   pkgs   ?   import <nixpkgs> {}   }:
+pkgs.mkShell {
+buildInputs   =   [   pkgs.hello   ];
+}
+EOF
+
 cp main.php main.php.bak
 cp main.lua main.lua.bak
 cp doc.md doc.md.bak
+cp main.nix main.nix.bak
 
 echo "Formatting..."
 dprint fmt --log-level=warn || true
@@ -87,6 +96,8 @@ echo -e "\n=== main.lua ==="
 diff -y --width=150 main.lua.bak main.lua || true
 echo -e "\n=== doc.md ==="
 diff -y --width=150 doc.md.bak doc.md || true
+echo -e "\n=== main.nix ==="
+diff -y --width=150 main.nix.bak main.nix || true
 
 echo -e "\nTest directory: $TMPDIR"
 if [[ "${USE_LOCAL:-0}" == "1" ]]; then

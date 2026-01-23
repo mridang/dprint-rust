@@ -8,7 +8,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "echo '${nextRelease.version}' > src/mago/VERSION && echo '${nextRelease.version}' > src/stylua/VERSION && echo '${nextRelease.version}' > src/rumdl/VERSION && make build"
+        "prepareCmd": "echo '${nextRelease.version}' > src/mago/VERSION && echo '${nextRelease.version}' > src/stylua/VERSION && echo '${nextRelease.version}' > src/rumdl/VERSION && echo '${nextRelease.version}' > src/alejandra/VERSION && make build"
       }
     ],
     [
@@ -28,7 +28,8 @@
         "assets": [
           "src/mago/VERSION",
           "src/stylua/VERSION",
-          "src/rumdl/VERSION"
+          "src/rumdl/VERSION",
+          "src/alejandra/VERSION"
         ]
       }
     ]

@@ -5,7 +5,8 @@
     "rustup": "latest",
     "wabt": "latest",
     "wasmtime": "latest",
-    "libiconv": "latest"
+    "libiconv": "latest",
+    "alejandra": "latest"
   },
   "shell": {
     "init_hook": [
