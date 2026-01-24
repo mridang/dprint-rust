@@ -87,7 +87,7 @@ version = "1.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "40c48f72fd53cd289104fc64099abca73db4166ad86ea0b4341abe65af83dadc"
 dependencies = [
- "windows-sys 0.61.2",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -98,7 +98,7 @@ checksum = "291e6a250ff86cd4a820112fb8898808a366d8f9f58ce16d1f538353ad55747d"
 dependencies = [
  "anstyle",
  "once_cell_polyfill",
- "windows-sys 0.61.2",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -512,9 +512,9 @@ dependencies = [
  "anyhow",
  "bumpalo",
  "dprint-core",
- "mago-database",
+ "mago-database 1.0.0",
  "mago-formatter",
- "mago-php-version",
+ "mago-php-version 1.0.0",
  "serde",
  "serde_json",
 ]
@@ -1095,19 +1095,38 @@ dependencies = [
 ]
 
 [[package]]
+name = "mago-database"
+version = "1.1.0"
+source = "git+https://github.com/carthage-software/mago?tag=1.1.0#dcc682d0b12e332e7f22c31d39b7638d8518d413"
+dependencies = [
+ "ahash",
+ "glob",
+ "globset",
+ "memchr",
+ "notify",
+ "rayon",
+ "serde",
+ "simdutf8",
+ "tracing",
+ "walkdir",
+]
+
+[[package]]
 name = "mago-formatter"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago?tag=1.0.0#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.1.0"
+source = "git+https://github.com/carthage-software/mago?tag=1.1.0#dcc682d0b12e332e7f22c31d39b7638d8518d413"
 dependencies = [
  "ahash",
  "bitflags 2.10.0",
  "bumpalo",
- "mago-database",
- "mago-php-version",
+ "mago-database 1.1.0",
+ "mago-php-version 1.1.0",
  "mago-span",
  "mago-syntax",
  "schemars",
  "serde",
+ "strum 0.27.2",
+ "strum_macros 0.27.2",
  "unicode-width",
 ]
 
@@ -1121,16 +1140,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "mago-php-version"
+version = "1.1.0"
+source = "git+https://github.com/carthage-software/mago?tag=1.1.0#dcc682d0b12e332e7f22c31d39b7638d8518d413"
+dependencies = [
+ "schemars",
+ "serde",
+]
+
+[[package]]
 name = "mago-reporting"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago?tag=1.0.0#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.1.0"
+source = "git+https://github.com/carthage-software/mago?tag=1.1.0#dcc682d0b12e332e7f22c31d39b7638d8518d413"
 dependencies = [
  "ahash",
  "ariadne",
  "atty",
  "blake3",
  "codespan-reporting",
- "mago-database",
+ "mago-database 1.1.0",
  "mago-span",
  "mago-text-edit",
  "schemars",
@@ -1143,22 +1171,22 @@ dependencies = [
 
 [[package]]
 name = "mago-span"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago?tag=1.0.0#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.1.0"
+source = "git+https://github.com/carthage-software/mago?tag=1.1.0#dcc682d0b12e332e7f22c31d39b7638d8518d413"
 dependencies = [
- "mago-database",
+ "mago-database 1.1.0",
  "serde",
 ]
 
 [[package]]
 name = "mago-syntax"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago?tag=1.0.0#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.1.0"
+source = "git+https://github.com/carthage-software/mago?tag=1.1.0#dcc682d0b12e332e7f22c31d39b7638d8518d413"
 dependencies = [
  "bumpalo",
  "either",
- "mago-database",
- "mago-php-version",
+ "mago-database 1.1.0",
+ "mago-php-version 1.1.0",
  "mago-reporting",
  "mago-span",
  "mago-syntax-core",
@@ -1170,19 +1198,19 @@ dependencies = [
 
 [[package]]
 name = "mago-syntax-core"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago?tag=1.0.0#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.1.0"
+source = "git+https://github.com/carthage-software/mago?tag=1.1.0#dcc682d0b12e332e7f22c31d39b7638d8518d413"
 dependencies = [
  "bumpalo",
- "mago-database",
+ "mago-database 1.1.0",
  "mago-span",
  "memchr",
 ]
 
 [[package]]
 name = "mago-text-edit"
-version = "1.0.0"
-source = "git+https://github.com/carthage-software/mago?tag=1.0.0#a470d002d19d64126ed8ff2230664284e96df30d"
+version = "1.1.0"
+source = "git+https://github.com/carthage-software/mago?tag=1.1.0#dcc682d0b12e332e7f22c31d39b7638d8518d413"
 dependencies = [
  "serde",
  "strum 0.27.2",
@@ -1567,8 +1595,8 @@ dependencies = [
 
 [[package]]
 name = "rumdl"
-version = "0.0.224"
-source = "git+https://github.com/rvben/rumdl#fbfba54e9554828ab4c2b87706e2934c459c6ae4"
+version = "0.1.0"
+source = "git+https://github.com/rvben/rumdl#daeb55fb15c70de91c22d402fd8be4c6f36f229b"
 dependencies = [
  "anyhow",
  "clap 4.5.54",
@@ -1748,16 +1776,16 @@ dependencies = [
 
 [[package]]
 name = "serde_json"
-version = "1.0.145"
+version = "1.0.149"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "402a6f66d8c709116cf22f558eab210f5a50187f702eb4d7e5ef38d9a7f1c79c"
+checksum = "83fc039473c5595ace860d8c4fafa220ff474b3fc6bfdb4293327f1a37e94d86"
 dependencies = [
  "indexmap 2.11.4",
  "itoa",
  "memchr",
- "ryu",
  "serde",
  "serde_core",
+ "zmij",
 ]
 
 [[package]]
@@ -2363,7 +2391,7 @@ version = "0.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22"
 dependencies = [
- "windows-sys 0.61.2",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -2651,3 +2679,9 @@ dependencies = [
  "quote",
  "syn 2.0.111",
 ]
+
+[[package]]
+name = "zmij"
+version = "1.0.16"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dfcd145825aace48cff44a8844de64bf75feec3080e0aa5cdbde72961ae51a65"
