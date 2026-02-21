@@ -14,7 +14,7 @@ authors = ["Mridang Agarwalla"]
 license = "Apache-2.0"
 
 [workspace.dependencies]
-anyhow = "1.0.100"
+anyhow = "1.0.102"
 dprint-core = { version = "0.67.4", features = ["wasm"] }
 serde = { version = "1.0.228", features = ["derive"] }
-serde_json = { version = "1.0.132", features = ["preserve_order"] }
+serde_json = { version = "1.0.149", features = ["preserve_order"] }
