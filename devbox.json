@@ -8,13 +8,11 @@
     "libiconv": "latest",
     "alejandra": "latest"
   },
+  "env": {
+    "CARGO_HOME": "$DEVBOX_PROJECT_ROOT/.cargo",
+    "RUSTUP_HOME": "$DEVBOX_PROJECT_ROOT/.rustup"
+  },
   "shell": {
-    "init_hook": [
-      "export CARGO_HOME=$PWD/.cargo",
-      "export RUSTUP_HOME=$PWD/.rustup",
-      "rustup default stable",
-      "rustup target add wasm32-unknown-unknown"
-    ],
     "scripts": {
       "test": "cargo test --all --all-features",
       "build": "make build",
