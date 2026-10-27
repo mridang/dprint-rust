@@ -13,4 +13,4 @@ anyhow.workspace = true
 dprint-core.workspace = true
 serde.workspace = true
 serde_json.workspace = true
-rumdl = { git = "https://github.com/rvben/rumdl", default-features = false, features = [] }
+rumdl = { version = "0.3.0", default-features = false }

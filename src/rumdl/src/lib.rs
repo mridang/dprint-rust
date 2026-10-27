@@ -107,15 +107,27 @@ impl SyncPluginHandler<Configuration> for RumdlPluginHandler {
         let all_rules = all_rules(&config);
         let rules = filter_rules(&all_rules, &config.global);
 
-        let warnings =
-            rumdl_lib::lint(&content, &rules, false, config.global.flavor, Some(&config))
-                .map_err(|e| anyhow!("{e}"))?;
+        let warnings = rumdl_lib::lint(
+            &content,
+            &rules,
+            false,
+            config.global.flavor,
+            None,
+            Some(&config),
+        )
+        .map_err(|e| anyhow!("{e}"))?;
 
         let coordinator = FixCoordinator::new();
         let mut fixed_content = content.clone();
 
-        let _ =
-            coordinator.apply_fixes_iterative(&rules, &warnings, &mut fixed_content, &config, 10);
+        let _ = coordinator.apply_fixes_iterative(
+            &rules,
+            &warnings,
+            &mut fixed_content,
+            &config,
+            10,
+            None,
+        );
 
         if fixed_content == content {
             Ok(None)
@@ -142,13 +154,26 @@ mod tests {
 
         let all_rules = all_rules(&config);
         let rules = filter_rules(&all_rules, &config.global);
-        let warnings = rumdl_lib::lint(content, &rules, false, config.global.flavor, Some(&config))
-            .expect("lint should succeed");
+        let warnings = rumdl_lib::lint(
+            content,
+            &rules,
+            false,
+            config.global.flavor,
+            None,
+            Some(&config),
+        )
+        .expect("lint should succeed");
 
         let coordinator = FixCoordinator::new();
         let mut fixed_content = content.to_string();
-        let _ =
-            coordinator.apply_fixes_iterative(&rules, &warnings, &mut fixed_content, &config, 10);
+        let _ = coordinator.apply_fixes_iterative(
+            &rules,
+            &warnings,
+            &mut fixed_content,
+            &config,
+            10,
+            None,
+        );
 
         assert!(fixed_content.ends_with("Line with trailing spaces\n"));
         assert!(fixed_content.len() <= content.len());
