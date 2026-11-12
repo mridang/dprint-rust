@@ -3,7 +3,7 @@ name: Format Code
 on: push
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   code-formatting:
@@ -34,15 +34,5 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cargo-
 
-      - name: Run rustfmt
-        run: cargo fmt --all
-
-      - name: Commit and Push Changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: Apply formatting
-          commit_options: '--no-verify'
-          repository: .
-          commit_user_name: github-actions[bot]
-          commit_user_email: github-actions[bot]@users.noreply.github.com
-          commit_author: GitHub Actions <actions@github.com>
+      - name: Check rustfmt
+        run: cargo fmt --all --check
